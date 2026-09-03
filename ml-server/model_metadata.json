@@ -1,0 +1,48 @@
+{
+  "categories": [
+    "data_sharing",
+    "arbitration",
+    "termination",
+    "liability",
+    "ip_license",
+    "payments",
+    "other"
+  ],
+  "risk_levels": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "category_label_encoder_classes": [
+    "arbitration",
+    "data_sharing",
+    "ip_license",
+    "liability",
+    "other",
+    "payments",
+    "termination"
+  ],
+  "risk_label_encoder_classes": [
+    "high",
+    "low",
+    "medium"
+  ],
+  "risk_weights": {
+    "data_sharing": 0.09,
+    "arbitration": 0.12,
+    "termination": 0.07,
+    "liability": 0.11,
+    "ip_license": 0.1,
+    "payments": 0.15,
+    "other": 0.12
+  },
+  "trained_on": "tosdr-terms-of-service-corpus + tosdr.org labeled points",
+  "loss_function": "cross_entropy (log loss)",
+  "models": {
+    "category_classifier": "category_classifier.joblib",
+    "risk_classifier": "risk_classifier.joblib",
+    "category_encoder": "category_label_encoder.joblib",
+    "risk_encoder": "risk_label_encoder.joblib",
+    "risk_weights": "risk_weights.json"
+  }
+}
