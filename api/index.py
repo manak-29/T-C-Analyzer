@@ -78,7 +78,7 @@ _MULTI_SPACE = re.compile(r"\s+")
 def clean_html(text: str) -> str:
     text = _TAG_RE.sub(" ", text)
     text = text.lower()
-    text = re.sub(r"[^a-z0-9\s.,;:!?()\\"'/-]", " ", text)
+    text = re.sub(r"[^a-z0-9\s.,;:!?()\"'/-]", " ", text)
     text = _MULTI_SPACE.sub(" ", text).strip()
     return text
 
@@ -134,7 +134,7 @@ def extract_company_name(url: str, html_text: str) -> str:
 def clean_text(text: str) -> str:
     text = _TAG_RE.sub(" ", text)
     text = text.lower()
-    text = re.sub(r"[^a-z0-9\s.,;:!?()\\"'/-]", " ", text)
+    text = re.sub(r"[^a-z0-9\s.,;:!?()\"'/-]", " ", text)
     text = _MULTI_SPACE.sub(" ", text).strip()
     return text
 
